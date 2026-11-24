@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * ATECH — Automation Technology brand palette.
+ * The semantic `indigo-*` scale used across the app is remapped to the
+ * corporate blues/greys so every button, active state, ring and focus
+ * outline matches the ATECH identity without touching component code.
+ */
+@theme {
+  --color-indigo-50: #eef4fa;
+  --color-indigo-100: #dce9f4;
+  --color-indigo-200: #bcd3e8;
+  --color-indigo-300: #93b7d7;
+  --color-indigo-400: #6296bc;
+  --color-indigo-500: #3b739f;
+  --color-indigo-600: #1f5a93;
+  --color-indigo-700: #194b7c;
+  --color-indigo-800: #143d66;
+  --color-indigo-900: #102f4f;
+  --color-indigo-950: #081f33;
+
+  --color-brand-steel: #4ea8de;
+  --color-brand-blue: #2f7cc4;
+  --color-brand-navy: #1f5a93;
+  --color-brand-deep: #102f4f;
+}
+
+:root {
+  --brand-ink: #3f4a56;
+  --brand-muted: #6e7a87;
+}
+
+.dark {
+  --brand-ink: #e2e8ee;
+  --brand-muted: #8ca3b8;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200;
+  }
+
+  /* Arabic uses Cairo for a proper, crisp RTL typographic voice. */
+  html[dir='rtl'] body,
+  html[dir='rtl'] {
+    font-family: 'Cairo', 'Inter', ui-sans-serif, system-ui, -apple-system,
+      BlinkMacSystemFont, 'Segoe UI', Tahoma, sans-serif;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
